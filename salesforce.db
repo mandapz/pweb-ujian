@@ -1,0 +1,17 @@
+-- Create database
+CREATE DATABASE salesforce;
+USE salesforce;
+
+-- Create sales table
+CREATE TABLE sales (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_name VARCHAR(100) NOT NULL,
+    product VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL,
+    sale_date DATE NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    status ENUM('pending', 'completed', 'cancelled') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
